@@ -30,7 +30,7 @@ exports.todaysdealrandom = (req, res) => {
       },
     ])
     // .select(
-    //   "_id producttitle discountprice features finalprice highestprice imageurl lowestprice percent producturl platform category"
+    //   "_id producttitle discountprice finalprice highestprice imageurl lowestprice percent producturl platform category"
     // )
     .sort({ finalprice: "desc" })
     .exec((err, data) => {

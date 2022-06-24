@@ -10,11 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
+    "express-jwt": "^7.7.5",
+    "formidable": "^2.0.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.5",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "p-iteration": "^1.1.8",
+    "shortid": "^2.2.16"
   }
 }

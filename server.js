@@ -6,16 +6,25 @@ const dotenv = require("dotenv");
 const allproductsroutes = require("./routes/allproductsroute");
 const searchbarRoutes = require("./routes/searchbarroute");
 const dealsRoutes = require("./routes/dealsroute");
+const authRoutes = require("./routes/userauthroutes");
+const trackproductroutes = require("./routes/trackproductsroute");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// app.use(express.json()); // Used to parse JSON bodies
+// app.use(express.urlencoded());
 
 app.use(cors());
 dotenv.config();
+
+app.use("/api", authRoutes);
 app.use("/api", allproductsroutes);
 app.use("/api", searchbarRoutes);
 app.use("/api", dealsRoutes);
+app.use("/api", trackproductroutes);
 
 mongoose
   .connect(process.env.MONGO_URL, {
